@@ -46,7 +46,7 @@ ebpm_exponential_mixture <- function(x,s = 1,  scale = "estimate", g_init = NULL
   if(is.null(g_init)){
     fix_g = FALSE ## then automatically unfix g if specified so
     if(identical(scale, "estimate")){scale <- select_scale_exponential(x,s,m, low)}
-    g_init = scale2gammamix_init(list(shape = replicate(length(scale), 1),scale = scale))
+    g_init = scale2gammamix_init(shape = replicate(length(scale), 1),scale = scale)
   }
   
   if(!fix_g){ ## need to estimate g_hat
