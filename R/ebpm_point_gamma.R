@@ -106,7 +106,7 @@ ebpm_point_gamma <- function(x, s = 1, g_init = NULL, fix_g = F, pi0 = "estimate
   
   lam_pm = (1-pi_hat)*(a+x)/(b+s)
   lam_log_pm =  digamma(a + x) - log(b + s)
-  lam_log_pm[x == 0] = -Inf
+  #lam_log_pm[x == 0] = -Inf
   posterior = data.frame(mean = lam_pm, mean_log = lam_log_pm)
   return(list(fitted_g = fitted_g, posterior = posterior, log_likelihood = log_likelihood))
 }
